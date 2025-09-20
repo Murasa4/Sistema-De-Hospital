@@ -19,7 +19,7 @@ public class Doctores {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
-            System.out.println("Pacientes: ");
+            System.out.println("Doctores: ");
             System.out.println("+-------------+--------------------------+-------------------+");
             System.out.println("| ID Doctores | Nombre                   | Especializacion   |");
             System.out.println("+-------------+--------------------------+-------------------+");
@@ -27,7 +27,7 @@ public class Doctores {
                 int id = resultSet.getInt("id");
                 String nombre = resultSet.getString("nombre");
                 String especializacion = resultSet.getString("especializacion");
-                System.out.printf("|%-13s|%-24s|%-24s|\n", id,nombre,especializacion);
+                System.out.printf("| %-11s | %-24s | %-17s |\n", id,nombre,especializacion);
                 System.out.println("+-------------+--------------------------+-------------------+");
             }
         } catch (SQLException ex) {

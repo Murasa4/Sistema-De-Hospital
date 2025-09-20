@@ -50,14 +50,14 @@ public class Paciente {
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("Pacientes: ");
             System.out.println("+-------------+--------------------------+----------+---------+");
-            System.out.println("| ID Paciente | Nombre                 | Edad     | Genero    |");
+            System.out.println("| ID Paciente | Nombre                   | Edad     | Genero    |");
             System.out.println("+-------------+--------------------------+----------+---------+");
             while(resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String nombre = resultSet.getString("nombre");
                 int edad = resultSet.getInt("edad");
                 String genero = resultSet.getString("genero");
-                System.out.printf("|%-13s|%-24s|%-10s|%-11s|\n", id,nombre,edad, genero);
+                System.out.printf("| %-13s | %-24s | %-10s | %-11s |\n", id,nombre,edad, genero);
                 System.out.println("+-------------+--------------------------+----------+---------+");
             }
         } catch (SQLException ex) {
